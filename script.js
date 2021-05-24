@@ -441,27 +441,33 @@ const locationData = [{
             "medicaid": "Yes. They take Medicaid, County Care, Blue Cross Blue Shield of IL PPO, and Molina",
             "LGBT": "yes",
           },
-          // {
-          //   "id": 24,
-          //   "name": "Broadway Youth Center",
-          //   "desc": "BYC provides basic needs assistance, resource advocacy, mental wellness supports, on-site psychiatry services, and telehealth.",
-          //   "hours": "Monday-Thursday 9:00am - 7:00pm and Fridays 9:00am - 5:00pm",
-          //   "lat": 41.6892001,
-          //   "lng": -87.6227602,
-          //   "waitTime": "48 hours for intake response/scheduling",
-          //   "addr1": "3410 West Roosevelt Road",
-          //   "addr2": "Chicago, IL 60624",
-          //   "phone0": "Contact Dr Ari Natinsky, PsyD",
-          //   "phone": "(773)840-8108",
-          //   "web": "catholiccharities.net/",
-          //   "telehealth": "no",
-          //   "languages": "unknown",
-          //   "financialAssistance": "Subsidized fee available based on household and income size.",
-          //   "ageRestrictions": "Must be 18+",
-          //   "appointment": "call for intake",
-          //   "medicaid": "yes",
-          //   "LGBT": "yes",
-          // }
+          {
+            "id": 24,
+            "name": "Broadway Youth Center",
+            "desc": "BYC provides basic needs assistance, resource advocacy, mental wellness supports, on-site psychiatry services, and telehealth.",
+            "hours": `Mondays 10 a.m. – 6 p.m. 
+            Tuesdays – 10 a.m. – 6 p.m. 
+            Wednesdays – Closed 
+            Thursdays – Sexual health services until 1 p.m. 
+            Provider available from 1 p.m. – 6 p.m. 
+            Fridays – 10 a.m. – 6 p.m. 
+            Note: The latest available appointment is until 5:20 p.m.`,
+            "lat": 41.6892001,
+            "lng": -87.6227602,
+            "waitTime": "The closer to 10am you can arrive, the better. Slots start to fill up after that",
+            "addr1": "3410 West Roosevelt Road",
+            "addr2": "Chicago, IL 60624",
+            "phone0": "Contact Dr Ari Natinsky, PsyD",
+            "phone": "773-388-1600;9",
+            "web": "howardbrown.org/service/broadway-youth-center/",
+            "telehealth": "no",
+            "languages": "Spanish",
+            "financialAssistance": "Yes, based on income ($5 for low income). If unemployed, you can sign a waiver for no income. If employed, you have to email check stubs. Regardless of insurance status, BYC never takes payments on-site.",
+            "ageRestrictions": "Ages 12-24",
+            "appointment": "They take walkins",
+            "medicaid": "yes",
+            "LGBT": "yes",
+          }
         ]
          
 var markerIcon = L.Icon.extend({ 
