@@ -488,23 +488,73 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 }).addTo(mymap);
 
 var sidebar = L.control.sidebar('sidebar', {
-    position: 'left'
+    position: 'left',
 });
 
 mymap.addControl(sidebar);
+
+var directory = locationData.map(loc => {
+  return {id: loc.id, name: loc.name}
+})
+console.log(directory)
+
+sidebar.on("hidden", function() {
+
+  sidebar.setContent("<p>yo</p>")
+  sidebar.toggle()
+ 
+})
+
+function createDirectory(directory) {
+
+  var anchor = document.createElement("div")
+  anchor.style.paddingTop = "2rem"
+
+  directory.forEach(locat => {
+
+    var dir = document.createElement("div")
+    dir.classList.add("directory-entry")
+    dir.style.borderBottom = "solid"
+    dir.style.borderWidth = "1px"
+    
+    var text = document.createTextNode(locat.name)
+    dir.appendChild(text)
+    anchor.appendChild(dir)
+
+  })
+
+  return anchor
+
+}
+
+var sidebarContent = createDirectory(directory)
+
+
+sidebar.setContent(sidebarContent)
+
+setTimeout(function () {
+  sidebar.show();
+}, 500);
+
 
 locationData.forEach(loc => {
 
     L.marker([loc.lat, loc.lng], {customId: loc.id}).addTo(mymap).on('click', function () {
         console.log(this.options.customId)
 
+        var visible = sidebar.isVisible()
         let location = locationData[this.options.customId - 1]
         let html = generateContent(location)
         sidebar.setContent(html);
 
-        sidebar.toggle();
+        if (visible == false) {
+          sidebar.toggle()
+        }
     });
 })
+
+
+
 
 function generateContent(loc) {
     return `
