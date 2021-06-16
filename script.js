@@ -563,7 +563,7 @@ function createDirectory(directory) {
   var anchor = document.createElement("div");
   // anchor.style.paddingTop = "2rem"
   var header = document.createElement("h2");
-  var headerText = document.createTextNode("Mental Health Services");
+  var headerText = document.createTextNode("Mental Health Providers");
   header.appendChild(headerText);
   anchor.appendChild(header);
 
