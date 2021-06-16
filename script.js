@@ -618,13 +618,13 @@ function clicky(event) {
   // console.log(event.target)
   var index = event.target.getAttribute("index");
   var data = locationData[index - 1];
-  var latlng = markerArray[index-1].latlng
-  mymap.setView(latlng,5);
+  // var latlng = markerArray[index-1].latlng
+  // mymap.setView(latlng,5);
 
   // markerArray[index-1].isVisible = false
 
   // for (i = 0; i < markerArray)
-  console.log(markerArray[index-1])
+  // console.log(markerArray[index-1])
 
   console.log(data)
   sidebar.setContent(generateContent(data));
