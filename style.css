@@ -1,0 +1,27 @@
+.directory-entry {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: skyblue;
+}
+.directory-entry:hover {
+
+    color: darkslategray;
+
+}
+
+h2 {
+    margin-top: -16px;
+    margin-bottom: 16px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    margin-right: -30px;
+    margin-left: -30px;
+    padding-left: 30px;
+    background-color: #284671;
+    color:white
+}
+
+.leaflet-marker-icon:hover {
+    color: red;
+    z-index: 1000;
+}
