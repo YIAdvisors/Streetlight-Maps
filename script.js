@@ -556,12 +556,11 @@ console.log(directory);
 
 sidebar.on("hidden", function () {
   sidebar.setContent(sidebarContent);
-  
-  // sidebar.toggle();
-});
+  });
 
 function createDirectory(directory) {
   var anchor = document.createElement("div");
+  anchor.setAttribute("id", "sidebar-header")
   // anchor.style.paddingTop = "2rem"
   var header = document.createElement("h2");
   var headerText = document.createTextNode("Mental Health Services");
