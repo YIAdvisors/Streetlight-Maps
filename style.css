@@ -25,3 +25,18 @@ h2 {
     color: red;
     z-index: 1000;
 }
+
+.legend {
+    cursor:pointer;
+    -webkit-border-radius: 8px;
+    text-decoration: none;
+    padding: 10px 15px;
+    background: #FFF;
+    color: black;
+    margin-left: 0rem
+;
+    }
+    .legend:hover {
+    text-decoration: none;
+    -webkit-transition-duration: 0.2s;
+    }
