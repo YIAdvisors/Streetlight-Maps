@@ -522,11 +522,11 @@ const locationData = [
 
 var customMarker = L.Marker.extend({
   options: {
-    customId: ""
+    customId: "",
   },
 });
 
-var markerArray = []
+var markerArray = [];
 
 var mymap = L.map("mapid").setView([41.81944, -87.7], 9.9);
 
@@ -556,7 +556,8 @@ console.log(directory);
 
 sidebar.on("hidden", function () {
   sidebar.setContent(sidebarContent);
-  sidebar.toggle();
+  
+  // sidebar.toggle();
 });
 
 function createDirectory(directory) {
@@ -591,10 +592,25 @@ setTimeout(function () {
   sidebar.show();
 }, 500);
 
+var legend = L.control({ position: "topleft" });
+legend.onAdd = function (map) {
+  var link = L.DomUtil.create("div", "legend");
+  link.href = "#";
+  L.DomEvent.on(link, "click", L.DomEvent.stopPropagation)
+    .on(link, "click", L.DomEvent.preventDefault)
+    .on(link, "click", function () {
+      sidebar.toggle();
+    });
+  link.innerHTML = "Directory";
+  return link;
+};
+legend.addTo(mymap);
+
+
 locationData.forEach((loc) => {
-  var marker = new customMarker([loc.lat, loc.lng], { 
+  var marker = new customMarker([loc.lat, loc.lng], {
     customId: loc.id,
-    riseOnHover: true
+    riseOnHover: true,
   })
     .addTo(mymap)
     .on("click", function () {
@@ -609,7 +625,7 @@ locationData.forEach((loc) => {
         sidebar.toggle();
       }
     });
-    markerArray.push(marker)
+  markerArray.push(marker);
 });
 
 var element = document.getElementsByClassName("directory-entry");
@@ -626,7 +642,7 @@ function clicky(event) {
   // for (i = 0; i < markerArray)
   // console.log(markerArray[index-1])
 
-  console.log(data)
+  console.log(data);
   sidebar.setContent(generateContent(data));
 }
 
