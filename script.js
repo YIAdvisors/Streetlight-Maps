@@ -517,7 +517,28 @@ const locationData = [
     appointment: "They take walkins",
     medicaid: "yes",
     LGBT: "yes",
-  },
+  },{
+    id: 25,
+    name: "Alternatives, Inc.",
+    desc: "Alternatives, Inc. provides services to youth (0-18) with short-and long-term therapy and case management, emphasizing family communication, conflict resolution, discipline, and life-skills development. Individual, family, and group services are offered through school-based health centers, and within our Youth Center to support youth experiencing a range of issues, including family conflict, substance abuse, peer relationships, identity issues, anger management, and behavioral/emotional challenges.",
+    hours: "8:30am-5:00pm",
+    lat: 41.9655,
+    lng: -87.6548,
+    waitTime: "varies",
+    addr1: "241 East 57th Street",
+    addr2: "Chicago, IL 60637",
+    phone: "(773) 506--7474",
+    web: "alternativesyouth.org/contact/",
+    telehealth: "no",
+    languages: "Spanish",
+    financialAssistance:
+      "Yes, they have a sliding scale, which means your payments are based on factors such as your income.",
+    ageRestrictions: "Services are offered to youth 12 to 24 years old.",
+    appointment:
+      "Services are by appointment. If you walk in they can help you schedule an appointment for a later time.",
+    medicaid: "yes",
+    LGBT: "yes",
+  }
 ];
 
 var customMarker = L.Marker.extend({
@@ -556,12 +577,11 @@ console.log(directory);
 
 sidebar.on("hidden", function () {
   sidebar.setContent(sidebarContent);
-  
-  // sidebar.toggle();
-});
+  });
 
 function createDirectory(directory) {
   var anchor = document.createElement("div");
+  anchor.setAttribute("id", "sidebar-header")
   // anchor.style.paddingTop = "2rem"
   var header = document.createElement("h2");
   var headerText = document.createTextNode("Mental Health Providers");
@@ -601,7 +621,7 @@ legend.onAdd = function (map) {
     .on(link, "click", function () {
       sidebar.toggle();
     });
-  link.innerHTML = "Directory";
+  link.innerHTML = '<i class="fas fa-bars"></i>';
   return link;
 };
 legend.addTo(mymap);
